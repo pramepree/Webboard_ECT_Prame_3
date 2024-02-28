@@ -25,12 +25,12 @@ if(isset($_SESSION['id'])){
     <div class = "row mt-4">
         <div class = "col-lg-4 col-md-3 col-sm-2 col-1"></div>
         <div class = "col-lg-4 col-md-6 col-sm-8 col-10">
-            <?php
+            <!-- <?php
                  if(isset($_SESSION['error'])){
                   echo "<div class='alert alert-danger'>ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง</div>";
                   unset($_SESSION['error']);
               }
-            ?>
+            ?> -->
             <div class="card bg-light text-dark">
                 <div class="card-header">เข้าสู่ระบบ</div>
                 <div class="card-body">
