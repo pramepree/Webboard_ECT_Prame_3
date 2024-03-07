@@ -100,7 +100,7 @@ if (isset($_GET['id'])) {
 
         <br>
 
-    
+
         <?php
         $conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8", "root", "");
         $sql = "select comment.content,comment.post_date,user.login
@@ -118,40 +118,40 @@ if (isset($_GET['id'])) {
         }
         $conn = null;
         ?>
-<?php
-    if(isset($_SESSION['id'])){
-        
-  
-    ?>
-        <div class="row mt-4">
-            <div class="col-lg-3 col-md-2 col-sm-1"></div>
-            <div class="col-lg-6 col-md-8 col-sm-10">
-                <div class="card border-success mt-3">
-                    <div class="card-header bg-success text-white">แสดงความเห็น</div>
-                    <div class="card-body">
-                        <form action="post_save.php" method="post">
-                            <input type="hidden" name="post_id" value="<?= $_GET['id']; ?>">
-                            <div class="row md-3 justify-content-center">
-                                <div class="col-lg-10">
-                                    <textarea name="comment" rows="8" class="form-control" required></textarea>
+        <?php
+        if (isset($_SESSION['id'])) {
+
+
+        ?>
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-2 col-sm-1"></div>
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <div class="card border-success mt-3">
+                        <div class="card-header bg-success text-white">แสดงความเห็น</div>
+                        <div class="card-body">
+                            <form action="post_save.php" method="post">
+                                <input type="hidden" name="post_id" value="<?= $_GET['id']; ?>">
+                                <div class="row md-3 justify-content-center">
+                                    <div class="col-lg-10">
+                                        <textarea name="comment" rows="8" class="form-control" required></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-lg-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-success btn-sm text-white">
-                                        <i class="bi bi-box-arrow-up-right"> ส่งข้อความ</i>
-                                    </button>
-                                    <button type="reset" class="btn btn-danger btn-sm ms-2">
-                                        <i class="bi bi-x-square"> ยกเลิก</i>
-                                    </button>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-12 d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-success btn-sm text-white">
+                                            <i class="bi bi-box-arrow-up-right"> ส่งข้อความ</i>
+                                        </button>
+                                        <button type="reset" class="btn btn-danger btn-sm ms-2">
+                                            <i class="bi bi-x-square"> ยกเลิก</i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         <?php } ?>
     </div>
 
