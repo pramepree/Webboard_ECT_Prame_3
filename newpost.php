@@ -18,7 +18,7 @@ if (!isset($_SESSION['id'])){
 </head>
 <body>
     <div class="container">
-         <h1 style="text-align: center;">Webboard GG</h1>
+         <h1 style="text-align: center;">Webboard PERM</h1>
          <?php
         include "nav.php"
         ?>

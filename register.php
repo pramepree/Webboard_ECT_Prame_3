@@ -30,11 +30,11 @@ if (isset($_SESSION["id"])) {
         }
     </script>
     <div class="container">
-        <h1 style="text-align: center;" class="mt-3">Webboard PERM</h1>
+        <h1 style="text-align: center;" class="mt-3">Webboard</h1>
         <hr>
         <?php
         include "nav.php"
-        ?>
+            ?>
         <div class="row mt-4">
             <div class="col-lg-4 col-md-2 col-sm-1"></div>
             <div class="col-lg-6 col-md-8 col-sm-10">
@@ -72,20 +72,10 @@ if (isset($_SESSION["id"])) {
                             <div class="row mt-3">
                                 <label for="pwd" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ</label>
                                 <div class="col-lg-9">
-                                    <input type="password" name="pwd2" id="pwd2" onblur="OnBluePwd()" class="form-control" required>
-                                    <i class="bi bi-eye-fill" id="show_eye"></i>
-                                    <i class="bi bi-eye-slash-fill" id="hide_eye"></i>
+                                    <input type="password" name="pwd2" id="pwd2" onblur="OnBluePwd()"
+                                        class="form-control" required>
                                 </div>
                             </div>
-                            <script>
-                                function password_show_hide() {
-                                    let x = document.getElementById("pwd");
-                                    let show_eye = document.getElementById("show_eye");
-                                    let hide_eye = document.getElementById("hide_eye");
-                                    hide_eye.classList.remove("d-none");
-                                    if (x.type === "password") {}
-                                }
-                            </script>
                             <div class="row mt-3">
                                 <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล</label>
                                 <div class="col-lg-9">
@@ -96,27 +86,33 @@ if (isset($_SESSION["id"])) {
                                 <label class="col-lg-3 form-label">เพศ</label>
                                 <div class="col-lg-9">
                                     <div class="form-check">
-                                        <input id="m" type="radio" name="gender" value="m" class="form-form-check-input" required>
+                                        <input id="m" type="radio" name="gender" value="m" class="form-form-check-input"
+                                            required>
                                         <label for="m" class="form-check-label">ชาย</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="f" type="radio" name="gender" value="m" class="form-form-check-input" required>
+                                        <input id="f" type="radio" name="gender" value="m" class="form-form-check-input"
+                                            required>
                                         <label for="f" class="form-check-label">หญิง</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="o" type="radio" name="gender" value="m" class="form-form-check-input" required>
+                                        <input id="o" type="radio" name="gender" value="m" class="form-form-check-input"
+                                            required>
                                         <label for="o" class="form-check-label">อื่นๆ</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <label for="email" class="col-lg-3 col-form-label">อีเมล</label>
-                                <div class="col-lg-9"><input id="email" type="email" name="email" class="form-control" required></div>
+                                <div class="col-lg-9"><input id="email" type="email" name="email" class="form-control"
+                                        required></div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-lg-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary btn-sm me-2"> <i class="bi bi-save"></i> สมัครสมาชิก</button>
-                                    <button type="reset" class="btn btn-danger btn-sm "> <i class="bi bi-x-square"></i> ยกเลิก</button>
+                                    <button type="submit" class="btn btn-primary btn-sm me-2"> <i
+                                            class="bi bi-save"></i> สมัครสมาชิก</button>
+                                    <button type="reset" class="btn btn-danger btn-sm "> <i class="bi bi-x-square"></i>
+                                        ยกเลิก</button>
                                 </div>
                             </div>
                         </form>
