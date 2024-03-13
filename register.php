@@ -19,8 +19,18 @@ if (isset($_SESSION["id"])) {
 </head>
 
 <body>
+    <script>
+        function OnBluePwd() {
+            let pwd = document.getElementById("pwd");
+            let pwd2 = document.getElementById("pwd2");
+            if (pwd.value !== pwd2.value) {
+                alert("รหัสผ่านทั้งสองช่องไม่ตรงกัน");
+                pwd2.value = "";
+            }
+        }
+    </script>
     <div class="container">
-        <h1 style="text-align: center;" class="mt-3">PERM WEB</h1>
+        <h1 style="text-align: center;" class="mt-3">Webboard PERM</h1>
         <hr>
         <?php
         include "nav.php"
@@ -31,9 +41,11 @@ if (isset($_SESSION["id"])) {
                 <?php
                 if (isset($_SESSION['add_login'])) {
                     if ($_SESSION['add_login'] == "error") {
-                        echo "<div class='alert alert-danger'> ชื่อบัญชีซ้ำหรือฐานข้อมูลไม่ถูกต้อง</div>";
+                        echo "<div class ='alert alert-danger'>
+                            ชื่อบัญชีซ้ำหรือฐานข้อมูลมีปัญหา</div>";
                     } else {
-                        echo "<div class='alert alert-success'>เพิ่มบัญชีเรียบร้อย</div>";
+                        echo "<div class ='alert alert-success'>
+                            เพิ่มบัญชีเรียบร้อยแล้ว</div>";
                     }
                     unset($_SESSION['add_login']);
                 }
@@ -53,9 +65,27 @@ if (isset($_SESSION["id"])) {
                             <div class="row mt-3">
                                 <label for="pwd" class="col-lg-3 col-form-label">รหัสผ่าน</label>
                                 <div class="col-lg-9">
-                                    <input id="pwd" type="password" name="pwd" class="form-control" required>
+                                    <input type="password" name="pwd" id="pwd" class="form-control" required>
                                 </div>
                             </div>
+
+                            <div class="row mt-3">
+                                <label for="pwd" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ</label>
+                                <div class="col-lg-9">
+                                    <input type="password" name="pwd2" id="pwd2" onblur="OnBluePwd()" class="form-control" required>
+                                    <i class="bi bi-eye-fill" id="show_eye"></i>
+                                    <i class="bi bi-eye-slash-fill" id="hide_eye"></i>
+                                </div>
+                            </div>
+                            <script>
+                                function password_show_hide() {
+                                    let x = document.getElementById("pwd");
+                                    let show_eye = document.getElementById("show_eye");
+                                    let hide_eye = document.getElementById("hide_eye");
+                                    hide_eye.classList.remove("d-none");
+                                    if (x.type === "password") {}
+                                }
+                            </script>
                             <div class="row mt-3">
                                 <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล</label>
                                 <div class="col-lg-9">
@@ -93,7 +123,7 @@ if (isset($_SESSION["id"])) {
                     </div>
                 </div>
             </div>
-
+            <div class="col-lg-3 col-md-2 col-sm-1"></div>
         </div>
     </div>
 </body>
