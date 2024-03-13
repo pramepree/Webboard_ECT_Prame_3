@@ -30,8 +30,13 @@ if (isset($_GET['id'])) {
             }
             $conn1 = null;
         }
-
+        function gg()
+        {
+            return showPost();
+        }
         ?> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,6 +123,7 @@ if (isset($_GET['id'])) {
         }
         $conn = null;
         ?>
+        
         <?php
         if (isset($_SESSION['id'])) {
 
