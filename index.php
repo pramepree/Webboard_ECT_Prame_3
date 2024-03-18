@@ -52,7 +52,7 @@ session_start();
                 </a></div>
         </div>
 
-
+        // ออกสอบเรื่อง select data
         <table class="table table-striped mt-4">
             <?php
             $conn = new PDO("mysql:host=localhost;dbname=webboard;charset=utf8", "root", "");

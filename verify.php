@@ -1,3 +1,6 @@
+// ออกสอบเรื่องการ connect
+
+
 <?php
 session_start();
 if (isset($_SESSION['id'])) {
@@ -24,3 +27,5 @@ if ($result->rowCount() == 1) {
     die();
 }
 $conn = null;
+
+
